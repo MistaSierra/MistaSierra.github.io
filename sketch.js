@@ -1,10 +1,13 @@
 function setup() {
-	createCanvas(480, 270);
-	background(120,120,0);
+  createCanvas (700, 600);
+  background (0,0,0);
 }
-  //Head
-	function draw (){
-  elipse(156, 146, 155, 155)
-	fill(220,176,143);
-	stroke(0)
-	}
+var x= 200
+function draw() {
+  ellipse (350,x,x,150)//head
+  
+  ellipse (290,x,30,10)// left eye
+  ellipse (410,x,30,10)//right eye
+  line (270,220,430,220)
+  
+}
