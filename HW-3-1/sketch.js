@@ -1,12 +1,16 @@
 function setup() {
-  createCanvas (700, 600);
-  background (0,0,0);
+  createCanvas(600, 800);
+  background(207, 238, 242);
 }
-var x= 200
 
 function draw() {
-  ellipse (350,x,x,150);//head
-  ellipse (290,x,30,10);// left eye
-  ellipse (410,x,30,10);//right eye
-  line (270,220,430,220);//mouth
+  
+  // paint tool
+  noStroke();
+  fill(259, 200, 200);
+  ellipse(mouseX, mouseY, 5, 5);
 }
+
+//function mouseIsPressed () {
+  //background(207, 238, 242);
+//} 
