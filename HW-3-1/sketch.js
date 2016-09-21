@@ -18,6 +18,11 @@ function draw() {
   noStroke();
   fill(0)
   rect(scootX, 400, 20, 20)
+ 
+ //independent changes 
+  var words = [ "wat", "what", "help", "dog should take over the world" ];
+  var word = random(words);  
+  text(word,10,50);  
 }
 
 function mousePressed () {
