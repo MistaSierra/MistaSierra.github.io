@@ -1,0 +1,2 @@
+I am kinda of getting this but i feel like its going too fast that i cant truely learn and memorize the different lessons
+and once i learn one thing i kind of forget it as we move on to the next thing but i dont know we'll see
