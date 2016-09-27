@@ -13,11 +13,12 @@ function draw() {
   
   var scootX = 0;
   scootX = scootX + 1;
-  
+
+
   //rectangle
   noStroke();
   fill(0)
-  rect(scootX, 400, 20, 20)
+  rect(scootX, 400, 20, 20);
 }
 
 function mousePressed () {
