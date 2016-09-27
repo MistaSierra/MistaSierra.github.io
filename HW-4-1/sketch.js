@@ -21,8 +21,9 @@ function draw() {
   }
   x = x + speed;
   
-  if(mouseIsPressed) {
+  if(mouseIsPressed ) {
     circlesize = circlesize + 1;
+    
   }
   
   
