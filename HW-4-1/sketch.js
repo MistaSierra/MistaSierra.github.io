@@ -10,7 +10,7 @@ function setup() {
 
 function draw() {
   frameRate (40)
-  stroke(50);
+  noStroke();
   fill (random(0,200), 0, random(0,150));
   ellipse(x, height/2, circlesize, circlesize );
   
