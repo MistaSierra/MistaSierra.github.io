@@ -1,13 +1,17 @@
-
-
-var circle() {
-  x = 0,
-  speed = 3,
-  circleSize = 100,
-  
-  noStroke();
-  fill (random(0,200), 0, random(0,150));
-  ellipse(this.x, height/2, this.circleSize, this.circleSize);
+var c1;
+function setup() {
+  createCanvas (500,500);
+  background(76, 59, 100);
+  frameRate (40);
+  c1 = new Circle();
 }
-  
-  
+
+function draw () {
+  c1.drawCircle();
+   textSize(25);
+   text("hold down mouse to increase size of circle", 15,450);
+
+
+
+
+}
