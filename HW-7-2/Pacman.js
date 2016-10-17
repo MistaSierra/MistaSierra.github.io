@@ -1,9 +1,10 @@
-var pacMan = {
-  
-  y = 200;
-  x = 300;
-  ySpeed = -3;
-  xSpeed = 4;
+function pacMan () {
+  y= 200;
+  x= 300;
+  ySpeed= -3;
+  xSpeed= 4;
+
+  ellipse(pacMan.x, pacMan.y, 24, 24);
 
   if (pacMan.x> width || pacMan.y< 0) {
     pacMan.xSpeed = pacMan.ySpeed * -1;
