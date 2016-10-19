@@ -1,27 +1,54 @@
-function pacMan () {
-  //I am not so sure on how to format all these
-  //below are the variables
-  y= 300;
-  x= 400;
-  ySpeed= -3;
-  xSpeed= 4;
 
-//meant to create at most 5 pacman
-  for (//what is going on here; pacMan <5, pacMan++); {
+//constructor method class type PacMan
+function PacMan (initXPos) {
+  //I am not so sure on how to format all these
+  //variables
+  this.x = initXPos;
+  this.y = 300;
+  this.ySpeed= -3;
+  this.xSpeed= 4;
+}
+//draw function for PacMan class
+PacMan.prototype.draw = function () {
+  //the drawing of the a body of the pacMan
+  this.move ();
   noStroke();
   fill(255,255,0);
-  ellipse(pacMan.x, pacMan.y, 24, 24);
+  ellipse(this.x, this.y, 24, 24);
   }
 
-//bouncing pacMan
-  if (pacMan.x> width || pacMan.y< 0) {
-    pacMan.xSpeed = pacMan.ySpeed * -1;
+
+// //adding new balls
+// for (var i = 0; var i <5, var i++); {
+//   if ()
+
+PacMan.prototype.move = function () {
+//boundaries for bouncing balls
+  if (this.x> width || this.x< 0) {
+    this.xSpeed = this.xSpeed * -1;
   }
- 
-  if (pacMan.y > height || pacMan.y < 0) {
-    pacMan.ySpeed = pacMan.ySpeed * -.5;
+
+  if (this.y > height || this.y < 0) {
+    if( this.y < 0){
+      this.y = 1;
+    }
+    if( this.y>height) {
+      this.y = height -1;
+    }
+    this.ySpeed = this.ySpeed * -.5;
   }
-  
-  pacMan.x = pacMan.x + pacMan.xSpeed;
-  pacMan.y = pacMan.y + pacMan.ySpeed;
+
+  this.x = this.x + this.xSpeed;
+  this.y = this.y + this.ySpeed;
+
+  fill(255);
+  text(this.y, 20, 20);
+
 }
+
+
+
+//these are just notes for later
+//scale(-1,1) to turn around pacman
+//DOM = Document Object Model
+//ciel() floor() round numbers up and down
