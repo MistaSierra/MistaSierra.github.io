@@ -17,7 +17,6 @@ PacMan.prototype.draw = function () {
   ellipse(this.x, this.y, 24, 24);
   }
 
-
 // //adding new balls
 // for (var i = 0; var i <5, var i++); {
 //   if ()
