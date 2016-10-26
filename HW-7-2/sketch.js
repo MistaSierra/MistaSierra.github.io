@@ -5,7 +5,7 @@ function setup() {
   createCanvas(600, 600);
 
   for (var i = 0; i < numOfPacs; i++) {
-    pac.push( new PacMan( i * 100 + random(600) ) );
+    pac.push( new PacMan( i * 100 + 100 ) );
   }
 }
 
