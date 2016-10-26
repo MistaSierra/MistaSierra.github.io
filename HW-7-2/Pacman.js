@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 //constructor method class type PacMan
 function PacMan (initXPos) {
@@ -20,6 +21,9 @@ PacMan.prototype.draw = function () {
   this.timer();
 		
   noStroke();
+=======
+ noStroke();
+>>>>>>> origin/master
   fill(255,255,0);
   arc( this.x, this.y, 34, 34, PI*1/8, -PI*1/8, PIE );
   //ellipse(this.x, this.y, 34, 34);
@@ -47,6 +51,7 @@ PacMan.prototype.move = function () {
   this.x = this.x + this.xSpeed;
   this.y = this.y + this.ySpeed;
 
+<<<<<<< HEAD
 
 
 }
@@ -55,6 +60,15 @@ PacMan.prototype.timer = function(){
   
 }
 
+=======
+}
+
+//I know these are needed I'm just not sure where to start
+PacMan.prototype.timer = function(){
+  
+}
+
+>>>>>>> origin/master
 PacMan.prototype.personalSpace = function (){
   
 }
@@ -65,3 +79,4 @@ PacMan.prototype.personalSpace = function (){
 //scale(-1,1) to turn around pacman
 //DOM = Document Object Model
 //ciel() floor() round numbers up and down
+
