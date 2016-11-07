@@ -1,5 +1,5 @@
 var pac=[];
-var numOfPacs = 1;
+var numOfPacs = 5;
 
 function setup() {
   createCanvas(600, 600);
@@ -21,3 +21,6 @@ function draw() {
   }
 
 }
+    currentPacMan.draw();
+
+

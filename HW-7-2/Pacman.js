@@ -1,25 +1,33 @@
 
 //constructor method class type PacMan
 function PacMan (initXPos) {
-  //I am not so sure on how to format all these
-  //variables
+
+//variables
   this.x = initXPos;
   this.y = 300;
   this.ySpeed= -3;
   this.xSpeed= 4;
+  this.direction = 0;
+
+
 }
+
+
 //draw function for PacMan class
 PacMan.prototype.draw = function () {
   //the drawing of the a body of the pacMan
   this.move ();
+  this.timer();
+
   noStroke();
   fill(255,255,0);
-  ellipse(this.x, this.y, 24, 24);
-  }
 
-// //adding new balls
-// for (var i = 0; var i <5, var i++); {
-//   if ()
+  arc( this.x, this.y, 34, 34, PI*1/8, -PI*1/8, PIE );
+  //ellipse(this.x, this.y, 34, 34);
+
+
+	}
+
 
 PacMan.prototype.move = function () {
 //boundaries for bouncing balls
@@ -40,8 +48,14 @@ PacMan.prototype.move = function () {
   this.x = this.x + this.xSpeed;
   this.y = this.y + this.ySpeed;
 
-  fill(255);
-  text(this.y, 20, 20);
+}
+
+//I know these are needed I'm just not sure where to start
+PacMan.prototype.timer = function(){
+
+}
+
+PacMan.prototype.personalSpace = function (){
 
 }
 
