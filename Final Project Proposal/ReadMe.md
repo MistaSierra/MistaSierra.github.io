@@ -8,4 +8,4 @@ I was thinking, perhaps maybe by next week I would have the characters sketched 
 the next week I would try to make them aware of eachother and then maybe also have the increase/decrease size down. And then finally I would insert
 the timer and possibly the scoreboard if I have time.
 
-![Slitherio](https://lh3.googleusercontent.com/x8E9iR0UYwyuoIlNfFS-GXNr6lHJHkxd0bwUa-0_O3ghWuVlySNCLpDFzsb_QCMbxQ=h900);
+![Slitherio](https://lh3.googleusercontent.com/x8E9iR0UYwyuoIlNfFS-GXNr6lHJHkxd0bwUa-0_O3ghWuVlySNCLpDFzsb_QCMbxQ=h900)
