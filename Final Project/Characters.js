@@ -1,6 +1,6 @@
 //Create object awareness for when the player bumps in to larger objects
-//they decrease by 5, and increase when they bump into smaller objects they
-//increase by two.
+  //they decrease by 5, and increase when they bump into smaller objects they
+  //increase by two.
 
 //Timer function for when "game restarts" and when the music speeds up
 
