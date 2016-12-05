@@ -22,6 +22,7 @@ function Player () {
     this.diameter = this.diameter - 5;
   }
 }
+
 //constructor method class type Enemies
 // Enemy Characters
 function Enemies (initXPos) {
