@@ -10,17 +10,21 @@
 //Player Character
 function Player () {
     this.diameter = 20
+}
 
+Player.prototype.draw = function (){
   fill (0,255,0);
   ellipse(mouseX, mouseY, this.diameter, this.diameter);
   //if the player is smaller than Enemy, they grow by 2
   //if the player is larger than Enemy, they shrink by 5
-  if (this.diameter >= Enemies.diameter) {
-    this.diameter = this.diameter + 2;
-  }
-  if (this.diameter <= Enemies.diameter) {
-    this.diameter = this.diameter - 5;
-  }
+
+  // if (this.diameter >= Enemies.diameter) {
+  //   this.diameter = this.diameter + 2;
+  // }
+  // if (this.diameter <= Enemies.diameter) {
+  //   this.diameter = this.diameter - 5;
+  //}
+
 }
 
 //constructor method class type Enemies
@@ -40,7 +44,7 @@ function Enemies (initXPos) {
 Enemies.prototype.draw = function () {
   //something should go here......
   this.move ();
-  this.timer();
+  //this.timer();
 
   //Enemy
   noStroke();

@@ -1,25 +1,28 @@
-var Enemy=[];
+var enemy=[];
 var numOfEnemy = 10;
+var player;
 
 
 function setup() {
   createCanvas(600, 600);
 
   for (var i = 0; i < numOfEnemy; i++) {
-    Enemy.push( new Enemies( i * 100 + 100 ) );
+    enemy.push( new Enemies( i * 100 + 100 ) );
   }
+  player = new Player ();
+
 }
 
 function draw() {
   background (10,100,40);
 
-  var Player;
   var currentEnemies;
 
+  player.draw();
+
 //create number of enemies
-  for (var i = 0; i < Enemy.length; i++) {
-    currentEnemies = Enemy[i];
+  for (var i = 0; i < enemy.length; i++) {
+    currentEnemies = enemy[i];
     currentEnemies.draw();
   }
 }
-    currentEnemies.draw();
