@@ -9,12 +9,18 @@
 
 //Player Character
 function Player () {
-    this.diameter = 20
+    this.diameter = 20;
+    this.x = 20;
+    this.y = 20;
 }
 
 Player.prototype.draw = function (){
+
+    this.x = mouseX;
+    this.y = mouseY;
+
   fill (0,255,0);
-  ellipse(mouseX, mouseY, this.diameter, this.diameter);
+  ellipse(this.x, this.y, this.diameter, this.diameter);
   //if the player is smaller than Enemy, they grow by 2
   //if the player is larger than Enemy, they shrink by 5
 
@@ -25,7 +31,32 @@ Player.prototype.draw = function (){
   //   this.diameter = this.diameter - 5;
   //}
 
-}
+};
+
+Player.prototype.collisionCheck = function ( objArr ) {
+    var distance = 0;
+    var minDist = 0;
+    for (var i = 0; i < objArr.length; i++) {
+        distance = dist(objArr[i].x, objArr[i].y, this.x, this.y);
+        minDist = this.diameter*0.5 + objArr[i].diameter*0.5;
+
+        // check for a collision
+        if ( distance <= minDist ) {
+
+            // check size relationship
+            if (objArr[i].diameter <= this.diameter) {
+                this.diameter = this.diameter - 5;
+                // TODO: What happens when we go negative diameter?????
+            } else {
+                this.diameter = this.diameter + 2;
+            }
+            // respawn enemy
+            objArr[i].respawn();
+
+        }
+
+    }
+};
 
 //constructor method class type Enemies
 // Enemy Characters
@@ -34,9 +65,9 @@ function Enemies (initXPos) {
 //variables
   this.x = initXPos;
   this.y = 300;
-  this.diameter = random (50)
-  this.ySpeed= -6;
-  this.xSpeed= 8;
+  this.diameter = random (50);
+  this.ySpeed= random(-10, 10);
+  this.xSpeed= random(-10, 10);
 
 }
 
@@ -53,7 +84,7 @@ Enemies.prototype.draw = function () {
 
 
 
-	}
+};
 
 
 Enemies.prototype.move = function () {
@@ -69,10 +100,18 @@ Enemies.prototype.move = function () {
     if( this.y>height) {
       this.y = height -1;
     }
-    this.ySpeed = this.ySpeed * -.5;
+    this.ySpeed = this.ySpeed * -0.5;
   }
 
   this.x = this.x + this.xSpeed;
   this.y = this.y + this.ySpeed;
 
-}
+};
+
+Enemies.prototype.respawn = function () {
+    this.x = random(width);
+    this.y = random(height);
+    this.diameter = random(10, 50);
+    this.xSpeed = -1 * this.xSpeed;
+    this.ySpeed = -1 * this.ySpeed;
+};
