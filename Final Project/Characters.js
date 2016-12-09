@@ -1,19 +1,11 @@
-//Create object awareness for when the player bumps in to larger objects
-  //they decrease by 5, and increase when they bump into smaller objects they
-  //increase by two.
-
-//Timer function for when "game restarts" and when the music speeds up
-
-//I'm the most clueless on how to insert music into this
-//If I have time I'd like to add a score board
-
+//sketch won't load in browser
 //Player Character
 function Player () {
     this.diameter = 20;
     this.x = 20;
     this.y = 20;
 }
-
+//player controls player by moving their mouse
 Player.prototype.draw = function (){
 
     this.x = mouseX;
@@ -21,15 +13,6 @@ Player.prototype.draw = function (){
 
   fill (0,255,0);
   ellipse(this.x, this.y, this.diameter, this.diameter);
-  //if the player is smaller than Enemy, they grow by 2
-  //if the player is larger than Enemy, they shrink by 5
-
-  // if (this.diameter >= Enemies.diameter) {
-  //   this.diameter = this.diameter + 2;
-  // }
-  // if (this.diameter <= Enemies.diameter) {
-  //   this.diameter = this.diameter - 5;
-  //}
 
 };
 
@@ -44,9 +27,10 @@ Player.prototype.collisionCheck = function ( objArr ) {
         if ( distance <= minDist ) {
 
             // check size relationship
+            //if the player is smaller than Enemy, they grow by 2
+            //if the player is larger than Enemy, they shrink by 5
             if (objArr[i].diameter <= this.diameter) {
                 this.diameter = this.diameter - 5;
-                // TODO: What happens when we go negative diameter?????
             } else {
                 this.diameter = this.diameter + 2;
             }
@@ -82,23 +66,28 @@ Enemies.prototype.draw = function () {
   fill(255,0,0);
   ellipse(this.x, this.y, this.diameter, this.diameter);
 
+//Enemy object collision. if enemy's diameter is equal to another's they go in the opposite direction
 
+      if (  objArr[i].diameter == this.diameter ) {
+          this.yspeed = this.yspeed * -1;
+          this.xspeed = this.xspeed * -1;
+       } else {
+          this.diameter = this.diameter + 2;
+      }
 
 };
 
 
 Enemies.prototype.move = function () {
-//boundaries for moving enemies
+//boundaries for moving enemies. Should go in all directions
   if (this.x> width || this.x< 0) {
     this.xSpeed = this.xSpeed * -1;
+    this.ySpeed = this.ySpeed * -1;
   }
 
   if (this.y > height || this.y < 0) {
-    if( this.y < 0){
-      this.y = 1;
-    }
-    if( this.y>height) {
-      this.y = height -1;
+    this.xSpeed = this.xSpeed * -1;
+    this.ySpeed = this.ySpeed * -1;
     }
     this.ySpeed = this.ySpeed * -0.5;
   }

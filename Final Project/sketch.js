@@ -44,7 +44,7 @@ function draw() {
   timer();
 }
 
-
+//display timer or countdown
 function timer() {
 
     push();
@@ -55,13 +55,14 @@ function timer() {
     text("time: "+currTime, width-100, 28);
     pop();
 
+//increase speed of music
     if (frameCount % 60 === 0) {
         currTime--;
 
         if (currTime < 20) {
             musicRate = musicRate + musicRate * 0.05;
             text(musicRate, 10, 10);
-            music.rate(musicRate)
+            music.rate(musicRate);
         }
     }
 
