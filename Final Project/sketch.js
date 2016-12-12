@@ -4,7 +4,7 @@ var player;
 var music;
 var musicRate = 0.7;
 var currTime = 60;
-
+//load music file
 function preload() {
     music = loadSound('assets/Neoakushon.mp3');
 }
@@ -19,7 +19,7 @@ function setup() {
   }
   player = new Player ();
 
-  // deal with zee muzik
+  // music
   music.loop();
   music.rate(0.7);
 
@@ -31,7 +31,7 @@ function draw() {
   var currentEnemies;
 
   player.draw();
-  // check for collisions and adjust size appropriatly
+  // check for collisions and adjust size
   player.collisionCheck( enemy );
 
 //create number of enemies

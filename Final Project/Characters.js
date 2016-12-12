@@ -15,7 +15,7 @@ Player.prototype.draw = function (){
   ellipse(this.x, this.y, this.diameter, this.diameter);
 
 };
-
+//function for creating an event with objects interact
 Player.prototype.collisionCheck = function ( objArr ) {
     var distance = 0;
     var minDist = 0;
@@ -96,7 +96,7 @@ Enemies.prototype.move = function () {
   this.y = this.y + this.ySpeed;
 
 };
-
+//enemies "come back to life" when "defeated"
 Enemies.prototype.respawn = function () {
     this.x = random(width);
     this.y = random(height);
