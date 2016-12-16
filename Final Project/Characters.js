@@ -1,7 +1,7 @@
 //sketch won't load in browser
 //Player Character
 function Player () {
-  this.diameter = 15;
+  this.diameter = 25;
   this.x = 20;
   this.y = 20;
 }
@@ -25,35 +25,30 @@ Player.prototype.collisionCheck = function ( objArr ) {
 
     // check for a collision
     if ( distance <= minDist ) {
-
       // check size relationship
-      //if the player is smaller than Enemy, they grow by 2
-      //if the player is larger than Enemy, they shrink by 5
+      //depending on their size ratio, the player will shrink or grow.
       if (objArr[i].diameter <= this.diameter) {
-        this.diameter = this.diameter - 5;
-      } else {
-        this.diameter = this.diameter + 2;
+        this.diameter = this.diameter + 5;
       }
-      // respawn enemy
+      if (objArr[i].diameter >= this.diameter) {
+        this.diameter = this.diameter - 5;
+      }
+      // respawn enemy after collision
       objArr[i].respawn();
-
     }
-
   }
 };
 
-//constructor method class type Enemies
 // Enemy Characters
 function Enemies (initXPos, idx) {
 
   //variables
   this.x = initXPos;
   this.y = 300;
-  this.diameter = random (10,50);
-  this.ySpeed= random(-10, 10);
-  this.xSpeed= random(-10, 10);
+  this.diameter = random (5,70);
+  this.ySpeed= random(-10, 7);
+  this.xSpeed= random(-10, 7);
   this.idx = idx;
-
 }
 
 //draw function for Enemies class
@@ -78,16 +73,8 @@ Enemies.prototype.draw = function (objArr) {
     if ( distance <= minDist && this.idx != i ) {
       this.ySpeed = this.ySpeed * -1;
       this.xSpeed = this.xSpeed * -1;
-
-
     }
   }
-
-
-  // if (  objArr.diameter == this.diameter ) {
-  // } else {
-  //   this.diameter = this.diameter + 2;
-  // }
 };
 
 Enemies.prototype.move = function () {
@@ -110,7 +97,7 @@ Enemies.prototype.move = function () {
 Enemies.prototype.respawn = function () {
   this.x = random(width);
   this.y = random(height);
-  this.diameter = random(10, 50);
+  this.diameter = random(10, 70);
   this.xSpeed = -1 * this.xSpeed;
   this.ySpeed = -1 * this.ySpeed;
 };

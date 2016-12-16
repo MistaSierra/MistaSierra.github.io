@@ -10,7 +10,6 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(600, 600);
   // hide the mouse
   noCursor();
 
@@ -27,7 +26,7 @@ function setup() {
 }
 
 function draw() {
-  createCanvas(500, 600);
+  createCanvas(500, 500);
   background (10,100,40);
 
   fill(250)
@@ -61,26 +60,25 @@ function timer() {
   text("time: "+currTime, width-100, 28);
   pop();
 
-  //increase speed of music
+  //increase speed of music at 20, otherwise keep same
   if (frameCount % 60 === 0) {
     currTime--;
 
     if (currTime < 20) {
-      musicRate = musicRate + musicRate * 0.04;
+      musicRate = musicRate + musicRate * 0.07;
       text(musicRate, 10, 10);
       music.rate(musicRate);
-      else {
-        musicRate = musicRate
-      }
     }
+      else {
+        music.rate(0.7);
+      }
   }
 
-   if(currTime <= -1){
-  //if(currTime <= 55){
-      reset();
+//reset player and timer when countdown is at 0
+  if(currTime <= -1){
+    reset();
   }
 }
-
 
 //game restarts after the timer reaches "0"
 function reset() {
